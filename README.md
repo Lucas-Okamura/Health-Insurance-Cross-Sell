@@ -1,6 +1,6 @@
 # Health Insurance Cross Sell
 
-![](img/health_insurance.jpg)
+![](img/health_insurance.png)
 
 # 1. Context
 
