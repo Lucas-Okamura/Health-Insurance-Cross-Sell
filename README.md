@@ -52,3 +52,33 @@ The data brings the following informations:
 * Policy sales channel: anonymous code for the customer contact channel.
 * Vintage: number of days the customer joined the company by purchasing health insurance.
 * Response: 0, the customer is not interested and 1, the customer is interested.
+
+# 4. Machine Learning Metrics
+
+For the problem solution, it was evaluated four machine learning algorithms: KNN, Logistic Regression, Random Forest Classifier and Extra Trees Classifier.
+
+The gain curve was drawn for each classifier. The gain curve has on its horizontal axis the percentage of the approached base and on the vertical axis the percentage of people who would actually be interested in the new product. Thus, the higher the percentage of interested people identified at the beginning of the ordered base, the better the classifier will be.
+
+The chosen model is the Logistic Regression one, due to its good results and low serialized file size. Below, you can see the gain curve of the logistic regression.
+
+![](img/logistic_regression_gain.png)
+
+# 5. Business Performance
+
+In business terms, it would be necessary to evaluate the team's ability to make calls and then, from the gain curve, prescribe the amount of customers who would actually be interested in the product that we would be able to approach.
+
+Hypothetically, thinking in cases where the team's capacity would be to make 20,000 calls, which would represent 26.23% of our customer base, 62.28% of the customers interested in acquiring the new product would be contacted. In another hypothetical case where the capacity would be 40,000 calls, and it would be possible to contact 52.47% of the customers, it would be possible to identify 99.35% of the customers actually interested in the new product.
+
+
+|   Capacity (Calls) |   % of clients contacted |   % of interested clients contacted |
+|-------------------:|-------------------------:|------------------------------------:|
+|     20,000         |        26.23%            |           62.28%                    |
+|     40,000         |        52.47%            |           99.35%                    |
+
+# 6. GSheets API Integration
+
+For future predictions, new customers can be sorted from a GSheets that uses the sorting model developed here. Just enter the information from the following columns: gender, age, region_code, policy_sales_channel, driving_license, vehicle_age, vehicle_damage, previously_insured, annual_premium, vintage and run the API from the Sheet itself (there is a button in the Top Menu).
+
+Finally, the Propensity Score column will be filled with the score of the respective customer, which can be used to sort the call priority list.
+
+![](img/gsheets_api.png)
